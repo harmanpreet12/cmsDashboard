@@ -4,7 +4,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import axios, { AxiosError } from "axios";
-import Image from 'next/image';
+
 // Define types
 type Task = {
   id: string;

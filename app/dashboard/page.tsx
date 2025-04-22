@@ -4,7 +4,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import axios, { AxiosError } from "axios";
-
+import Image from 'next/image';
 // Define types
 type Task = {
   id: string;
@@ -447,11 +447,11 @@ export default function Dashboard() {
                 <p>Loading weather data...</p>
               ) : weatherData ? (
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <img 
+                  <Image 
                     src={weatherData.current.condition.icon} 
                     alt={weatherData.current.condition.text}
-                    width="64"
-                    height="64"
+                    width={64}
+                    height={64}
                   />
                   <div style={{ marginLeft: "15px" }}>
                     <p style={{ fontSize: "24px", fontWeight: "bold", margin: "0" }}>
@@ -478,7 +478,7 @@ export default function Dashboard() {
             }}>
               <h3 style={{ marginTop: 0, marginBottom: "15px" }}>Activity Overview</h3>
               <div style={{ display: "flex", height: "150px", alignItems: "flex-end" }}>
-                {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day, index) => {
+                {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => {
                   const height = Math.floor(Math.random() * 100) + 20;
                   return (
                     <div key={day} style={{ flex: 1, margin: "0 5px", textAlign: "center" }}>

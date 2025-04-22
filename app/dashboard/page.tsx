@@ -447,12 +447,14 @@ export default function Dashboard() {
                 <p>Loading weather data...</p>
               ) : weatherData ? (
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  <Image 
-                    src={weatherData.current.condition.icon} 
+                 {/* <Image 
+                    src={weatherData.current.condition.icon.startsWith('//') 
+                      ? `https:${weatherData.current.condition.icon}` 
+                      : weatherData.current.condition.icon} 
                     alt={weatherData.current.condition.text}
                     width={64}
                     height={64}
-                  />
+                  /> */}
                   <div style={{ marginLeft: "15px" }}>
                     <p style={{ fontSize: "24px", fontWeight: "bold", margin: "0" }}>
                       {weatherData.current.temp_c}°C
